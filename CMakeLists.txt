@@ -38,6 +38,11 @@ endif()
 # Main project
 #
 
+set(SIMPLE_VERTEX_SHADER "${PROJECT_SOURCE_DIR}/shaders/simple.vs")
+set(SIMPLE_FRAGMENT_SHADER "${PROJECT_SOURCE_DIR}/shaders/simple.fs")
+configure_file(src/definitions.h.in src/definitions.h @ONLY)
+include_directories("${CMAKE_CURRENT_BINARY_DIR}/src")
+
 set(CMAKE_BUILD_TYPE Debug)
 
 add_executable(opengl1 src/main.cpp)
